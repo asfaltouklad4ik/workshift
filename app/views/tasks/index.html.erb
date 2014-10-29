@@ -1,0 +1,53 @@
+<%= grid(@tasks_grid) do |g|
+
+  g.column name: 'Name:', html: {style: 'width:120px;resize:both;overflow:auto;'} do |task|
+    link_to(task.name, task_path(task))
+  end
+
+  g.column name: 'Description:', html: {style: 'width:600px;resize:both;overflow:auto;'} do |task|
+    task.description
+  end
+
+  g.column name: 'Created AT:' do |task|
+    task.created_at
+  end
+
+  g.column name: 'Updated AT:' do |task|
+    task.updated_at
+  end
+
+  g.column name: 'Deadline:' do |task|
+    task.deadline
+  end
+
+  g.column name: 'Owner:' do |task|
+   task.user.email #unless task.user.nil?
+  end 
+
+
+
+  
+
+  g.column  html: {style: 'text-align:right; width:30px'} do |task|
+    link_to('Edit', edit_task_path(task))
+  end
+
+  g.column html: {style: 'text-align:right; width:30px'} do |task|
+    link_to 'Delete', task_path(task),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }
+  end
+end -%>
+
+
+
+
+
+
+
+
+
+
+<%= link_to 'Workshift', root_path %> <br>
+<%= link_to 'New task', new_task_path %> 
+

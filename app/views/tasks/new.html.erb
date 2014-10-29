@@ -1,0 +1,7 @@
+<%= simple_form_for @task do |f| %>
+  <%= f.input :name, label: 'Task name, please' %>
+  <%= f.input :description, hint: 'No special characters.' %>
+  <%= f.input :deadline %>
+  <%= f.input :category  %>
+  <%= f.button :submit %>
+<% end %>

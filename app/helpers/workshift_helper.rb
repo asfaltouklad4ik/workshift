@@ -1,0 +1,2 @@
+module WorkshiftHelper
+end

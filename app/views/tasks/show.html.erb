@@ -1,0 +1,27 @@
+<p>
+  <strong>Title:</strong>
+  <%= @task.name %>
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= @task.description %>
+</p>
+
+<p>
+  <strong>Deadline:</strong>
+  <%= @task.deadline %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @task.category %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @task.user.email %>
+</p>
+
+<%= link_to 'All tasks', tasks_path %> 
+

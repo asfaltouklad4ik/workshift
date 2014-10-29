@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Workshift</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+<header class="navbar navbar-fixed-top navbar-inverse">
+  
+    <div class="container">
+      <%= link_to "WORKSHIFT", root_path, id: "logo" %> <p>by g-man&suff</p>
+      <nav>
+        <ul class="nav pull-right">
+         <b> <li><%= link_to "Sign in", user_session_path %></li>
+          <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %> </li> </b>
+
+        </ul> 
+      </nav>
+    
+  </div>
+</header>
+
+<%= yield %>
+
+<footer>  
+      <nav>        
+          <li><%= link_to "All Tasks", tasks_path %></li>
+     </nav>
+</footer>
+
+
+
+</body>
+</html>
